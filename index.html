@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <title>Frontend Mentor | Intro section with dropdown navigation</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@500&display=swap" rel="stylesheet">
+  <style>
+  </style>
+</head>
+<body>
+    <nav>
+      <div class="logo"><img src="logo.svg"></div>
+      <ul>
+        <li><a href="#">Features</a>
+          <button  id="show1"><img  src="icon-arrow-down.svg"></button>
+          <button  id="hide1"><img  src="icon-arrow-up.svg"></button>
+          <div class="dropdown-container">
+          <div class="down">
+            <div><img src="icon-todo.svg"><p>Todo List</p></div>
+            <div><img src="icon-calendar.svg"><p>Calender</p></div>
+            <div><img src="icon-reminders.svg"><p>Remainders</p></div>
+            <div><img src="icon-planning.svg"><p>Planning</p></div></div>
+          </div></li>
+        <li><a href="#">Company</a>
+        <button id="show2"><img  src="icon-arrow-down.svg"></button>
+        <button id="hide2"><img  src="icon-arrow-up.svg"></button>
+        <div class="dropdown-container">
+        <div class="dropdown">
+          <p>Histroy</p>
+          <p>Our Team</p>
+          <p>Blog</p></div>
+        </div></li>
+        <li><a href="#">Careers</a></li>
+        <li><a href="#">About</a></li>
+      </ul>
+      <div class="right-nav" id="rightnav">
+        <button class="btn">Login</button>
+        <button class="btn2">Register</button>
+      </div>
+      <div class="burger">
+        <img src="icon-menu.svg" onclick="showMenu()">
+        <img src="icon-close-menu.svg" onclick="hideMenu()">
+      </div>
+    </nav>
+    <div class="content">
+      <div class="site1">
+      <h1>Make remote work</h1>
+      <p>Get your team in sync, no matter your location. Streamline processes, 
+      create team rituals, and watch productivity soar.</p>
+      <button class="btn3">Learn more</button>
+      <div class="footer">
+        <img src="client-databiz.svg">
+        <img src="client-audiophile.svg">
+        <img src="client-meet.svg">
+        <img src="client-maker.svg">
+      </div></div>
+      <div class="site2">
+      <img src="image-hero-desktop.png">
+    </div>
+    </div>
+    <script>
+      var show1 = document.getElementById('show1');
+      var hide1 = document.getElementById('hide1');
+      var down = document.querySelector(".down");
+      var show2 = document.getElementById('show2')
+      var hide2 = document.getElementById('hide2');
+      var dropdown = document.querySelector(".dropdown")
+      function toggleDropdown() {
+         if (down.style.display === "none" || down.style.display === "") {
+         down.style.display = "block";
+         show1.style.display = "none";
+         hide1.style.display = "inline";
+      } else {
+         down.style.display = "none";
+         show1.style.display = "inline";
+         hide1.style.display = "none";
+      }
+    }
+    function toggleDropdown2() {
+         if (dropdown.style.display === "none" || dropdown.style.display === "") {
+         dropdown.style.display = "block";
+         show2.style.display = "none";
+         hide2.style.display = "inline";
+      }else {
+         dropdown.style.display = "none";
+         show2.style.display = "inline";
+         hide2.style.display = "none";
+      }
+    }
+      show1.addEventListener("click", toggleDropdown);
+      hide1.addEventListener("click", toggleDropdown);
+      show2.addEventListener("click", toggleDropdown2);
+      hide2.addEventListener("click", toggleDropdown2);
+
+      var ullist = document.getElementById("ullist");
+      var rightnav = document.getElementById("rightnav");
+      var burger=document.querySelector(".burger")
+      function showMenu(){
+       ullist.style.right="0";
+       rightnav.style.right="0";
+       burger.style.display="block"
+       }
+      function hideMenu(){
+       ullist.style.right="-200px";
+       rightnav.style.right="-200px";
+     }
+    </script>
+</body>
+</html>
